@@ -11,7 +11,7 @@ The files needed for input include the following:
 
 Eric has some great examples and helper scripts to make the above files, but I found that my de novo genome needed some customization within the helper scripts. 
 
-## make_units.R
+## write_units.R
 R script ```make_units.R``` was created to automate making the units.tsv file. Information for this file was found in the whole genome reads.
 
 ## reorder_chromosomes.sh
