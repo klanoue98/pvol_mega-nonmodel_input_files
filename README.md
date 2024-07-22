@@ -11,3 +11,8 @@ The files needed for input include the following:
 
 Eric has some great examples and helper scripts to make the above files, but I found that my de novo genome needed some customization in the helper scripts. 
 
+R script "make_units.R creates the units.tsv file.
+
+Script reorder_chromosomes.sh is used prior to make_chromosomes_and_scaffolds.R. I found that without assigning chromosomes to the do novo genome, the r script was unable to identify them, and would put all of the scaffolds and chromosomes into the scaffolds.tsv file.
+
+
