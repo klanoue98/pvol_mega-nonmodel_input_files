@@ -1,0 +1,27 @@
+cluster:
+  mkdir -p results/slurm_logs/{rule} &&
+  sbatch
+    --partition=normal
+    --cpus-per-task={threads}
+    --time=96:00:00
+    --job-name=smk-{rule}-{wildcards}
+    --output=results/slurm_logs/{rule}/{rule}-{wildcards}-%j.out
+    --error=results/slurm_logs/{rule}/{rule}-{wildcards}-%j.err
+    --parsable
+default-resources:
+# - time="96:00:00"
+# - mem_mb=4800
+restart-times: 0
+max-jobs-per-second: 10
+max-status-checks-per-second: 50
+local-cores: 20
+latency-wait: 60
+cores: 100
+jobs: 500
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+use-conda: True
+cluster-status: status-sacct-robust.sh
+cluster-cancel: scancel
+cluster-cancel-nargs: 1000
